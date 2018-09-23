@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<table class="table table-sm">
+    <h1> Portfolio Summary </h>
+    <tbody>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Current Price</th>
+            <th>Current Value of Holding</th>
+        </tr>
+    {% for i in range(number_of_rows) %}
+        <tr>
+            <th>{{ stock_list[i] }}</th>
+            <th>{{ amount_list[i] }}</th>
+            <th>{{ price_list[i] }}</th>
+            <th>{{ value_list[i] }}</th>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
+
+{% block body %}
+
+ <table class="table table-striped">
+        <h1> Results </h1>
+            <thead>
+                <tr>
+                    <th> Cash Balance </th>
+                    <th> Total (Cash + Holdings) </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> {{ cash }}$ </td>
+                    <td> {{ grand_total }}$ </td>
+                </tr>
+            </tbody>
+    </table>
+
+{% endblock %}

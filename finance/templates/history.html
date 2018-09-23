@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+      <tr>
+        <th>Stock</th>
+        <th>Amount owned</th>
+        <th>Current Value</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Total Value</th>
+      </tr>
+    {% for transaction in transactions %}
+      <tr>
+        <td>{{ transaction.stock }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.price }}</td>
+        <td>{{ transaction.date }}</td>
+        <td>{{ transaction.time }}</td>
+        <td>{{ transaction.total_amount }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
